@@ -4,12 +4,10 @@ from moviepy import VideoFileClip
 from pathlib import Path
 
 
-def split_audio(video_path: Path):
-    video = VideoFileClip(video_path)
-    video.audio.write_audiofile(
-        video_path.parent / "audio_channel.wav", codec="pcm_s32le"
-    )
-    video.write_videofile(video_path.parent / "image_channel.mp4", audio=False)
+def split_audio_from_video(input_video_path: Path, image_channel_path: Path, audio_channel_path: Path):
+    video = VideoFileClip(input_video_path)
+    video.audio.write_audiofile(audio_channel_path, codec="pcm_s32le")
+    video.write_videofile(image_channel_path, audio=False)
     video.close()
 
 
