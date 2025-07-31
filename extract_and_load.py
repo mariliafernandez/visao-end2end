@@ -1,9 +1,17 @@
 from src import extract, database
+from pathlib import Path
 
 if __name__ == "__main__":
-    video_path = "data/image_channel.mp4"
+
+    input_video_path = Path("data/input_video.mp4")
+    image_channel_path = input_video_path.parent / "image_channel.mp4"
+    audio_channel_path = input_video_path.parent / "audio_channel.wav"
+
+    extract.split_audio_from_video(input_video_path, image_channel_path, audio_channel_path)
+    
     time_interval = 0.1  # seconds
-    frames, metadata = extract.extract_frames(video_path, time_interval)
+    frames, metadata = extract.extract_frames(image_channel_path, time_interval)
+
 
     for i, (frame, meta) in enumerate(zip(frames, metadata)):
         hdu = extract.image_to_fits(frame, meta)
@@ -16,3 +24,4 @@ if __name__ == "__main__":
             'height': hdu.data.shape[0],
             'dtype': str(hdu.data.dtype),
         })
+
