@@ -55,7 +55,7 @@ def image_to_fits(img: str, metadata: dict):
     """Convert an image to FITS format"""
     gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     hdu = fits.PrimaryHDU(gray_img)
-    hdu.header["TIMESTAMP"] = metadata["timestamp"]
+    hdu.header["TIME"] = metadata["timestamp"]
     hdu.header["FRAME_ID"] = metadata["frame_id"]
     return hdu
 
