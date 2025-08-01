@@ -5,16 +5,16 @@ Pipeline de análise de vídeo *end‑to‑end*, com a leitura de vídeos, armaz
 
 ## Estrutura do projeto
 **visao-end2end/**
-├── data/ *# Vídeo de entrada e modelo treinado*
-├── resultados/ *# Matriz de confusão e saídas de detecção*
-├── src/ *# Código fonte principal*
-│ ├── bbox_operations.py  *# Manipulações de bounding boxes*
-│ ├── database.py  *# Operações no banco de dados*
-│ ├── extract.py  *# Extração de imagem e áudio do vídeo*
-│ ├── image_operations.py  *# Manipulações de imagem*
-├── Pipfile  *# Dependências do projeto*
-├── requirements.txt  *# Dependências do projeto*
-├── video_analysis.ipynb  *# Notebook com o processamento completo*
+- data/ *# Vídeo de entrada e modelo treinado*
+- resultados/ *# Matriz de confusão e saídas de detecção*
+- src/ *# Código fonte principal*
+    - bbox_operations.py  *# Manipulações de bounding boxes*
+    - database.py  *# Operações no banco de dados*
+    - extract.py  *# Extração de imagem e áudio do vídeo*
+    - image_operations.py  *# Manipulações de imagem*
+- requirements.txt  *# Dependências do projeto*
+- Pipfile  *# Dependências do projeto (pipenv)*
+- video_analysis.ipynb  *# Notebook com o processamento completo*
 
 
 
